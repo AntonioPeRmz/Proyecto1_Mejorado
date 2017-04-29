@@ -10,6 +10,12 @@ PImage Juego;
 PImage TeclaA, TeclaS, TeclaD, TeclaF, TeclaG, TeclaH;
 PImage Ganador1, Ganador2, Ganador3, Ganador4, Ganador5, Ganador6;
 int Pantalla = 0;
+import ddf.minim.analysis.*;
+import ddf.minim.*;
+Minim soundengine;
+AudioSample sonido1;
+AudioSample sonido2;
+AudioSample sonido3;
 
 void setup(){
   background(0);
@@ -39,7 +45,12 @@ void setup(){
   Umbreon = new Pokemon("Umbreon",1000,80,500,6,1,4);
   Snaxs = new Pokemon("Snaxs",1000,80,390,5,2,5);
   
+  soundengine = new Minim(this);
+  sonido1 = soundengine.loadSample("Bola.mp3", 1024);
+  sonido2 = soundengine.loadSample("Fuego.mp3", 1024);
+  sonido3 = soundengine.loadSample("Piedra.mp3", 1024);
 }
+  
 
 //DIVISIÓN DE LAS PANTALLAS.
 void draw(){
@@ -183,7 +194,7 @@ void draw(){
     fill(47,198,40);
     text("HP "+" 100/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -191,15 +202,16 @@ void draw(){
     text("Presiona P para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
     }
    if(key =='p' || key=='P'){
     image(TeclaA,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -207,6 +219,7 @@ void draw(){
     text("Presiona W para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='w' || key=='W'){
     image(TeclaA,0,0);
@@ -215,7 +228,7 @@ void draw(){
     fill(47,198,40);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -223,15 +236,16 @@ void draw(){
     text("Presiona O para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='o' || key=='O'){
     image(TeclaA,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -239,6 +253,7 @@ void draw(){
     text("Presiona E para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='e' || key=='E'){
     image(TeclaA,0,0);
@@ -247,7 +262,7 @@ void draw(){
     fill(47,198,40);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -255,15 +270,16 @@ void draw(){
     text("Presiona I para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='i' || key=='I'){
     image(TeclaA,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -271,12 +287,13 @@ void draw(){
     text("Presiona R para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='r' || key=='R'){
     image(Ganador1,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
     fill(255,0,0);
@@ -328,7 +345,7 @@ void draw(){
     fill(47,198,40);
     text("HP "+" 100/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -336,15 +353,16 @@ void draw(){
     text("Presiona P para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
     }
    if(key =='p' || key=='P'){
     image(TeclaS,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -352,15 +370,16 @@ void draw(){
     text("Presiona W para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
    }
    if(key =='w' || key=='W'){
     image(TeclaS,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -368,15 +387,16 @@ void draw(){
     text("Presiona O para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='o' || key=='O'){
     image(TeclaS,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -384,15 +404,16 @@ void draw(){
     text("Presiona E para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
    }
    if(key =='e' || key=='E'){
     image(TeclaS,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -400,15 +421,16 @@ void draw(){
     text("Presiona I para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='i' || key=='I'){
     image(TeclaS,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -416,12 +438,13 @@ void draw(){
     text("Presiona R para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
    }
    if(key =='r' || key=='R'){
     image(Ganador2,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
     fill(255,0,0);
@@ -473,7 +496,7 @@ void draw(){
     fill(47,198,40);
     text("HP "+" 100/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -481,15 +504,16 @@ void draw(){
     text("Presiona P para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
     }
    if(key =='p' || key=='P'){
     image(TeclaD,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -497,15 +521,16 @@ void draw(){
     text("Presiona W para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='w' || key=='W'){
     image(TeclaD,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -513,15 +538,16 @@ void draw(){
     text("Presiona O para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='o' || key=='O'){
     image(TeclaD,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -529,15 +555,16 @@ void draw(){
     text("Presiona E para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='e' || key=='E'){
     image(TeclaD,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -545,15 +572,16 @@ void draw(){
     text("Presiona I para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='i' || key=='I'){
     image(TeclaD,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -561,12 +589,13 @@ void draw(){
     text("Presiona R para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='r' || key=='R'){
     image(Ganador3,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
     fill(255,0,0);
@@ -618,7 +647,7 @@ void draw(){
     fill(47,198,40);
     text("HP "+" 100/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -626,15 +655,16 @@ void draw(){
     text("Presiona P para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
     }
    if(key =='p' || key=='P'){
     image(TeclaF,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -642,15 +672,16 @@ void draw(){
     text("Presiona W para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='w' || key=='W'){
     image(TeclaF,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -658,15 +689,16 @@ void draw(){
     text("Presiona O para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
    }
    if(key =='o' || key=='O'){
     image(TeclaF,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -674,15 +706,16 @@ void draw(){
     text("Presiona E para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='e' || key=='E'){
     image(TeclaF,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -690,15 +723,16 @@ void draw(){
     text("Presiona I para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
    }
    if(key =='i' || key=='I'){
     image(TeclaF,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -706,12 +740,13 @@ void draw(){
     text("Presiona R para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='r' || key=='R'){
     image(Ganador4,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
     fill(255,0,0);
@@ -763,7 +798,7 @@ void draw(){
     fill(47,198,40);
     text("HP "+" 100/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -771,15 +806,16 @@ void draw(){
     text("Presiona P para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
     }
    if(key =='p' || key=='P'){
     image(TeclaG,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -787,15 +823,16 @@ void draw(){
     text("Presiona W para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='w' || key=='W'){
     image(TeclaG,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -803,15 +840,16 @@ void draw(){
     text("Presiona O para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='o' || key=='O'){
     image(TeclaG,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -819,15 +857,16 @@ void draw(){
     text("Presiona E para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='e' || key=='E'){
     image(TeclaG,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -835,15 +874,16 @@ void draw(){
     text("Presiona I para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido2.trigger();
    }
    if(key =='i' || key=='I'){
     image(TeclaG,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -851,12 +891,13 @@ void draw(){
     text("Presiona R para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='r' || key=='R'){
     image(Ganador5,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
     fill(255,0,0);
@@ -908,7 +949,7 @@ void draw(){
     fill(47,198,40);
     text("HP "+" 100/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -916,15 +957,16 @@ void draw(){
     text("Presiona P para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
     }
    if(key =='p' || key=='P'){
     image(TeclaH,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -932,15 +974,16 @@ void draw(){
     text("Presiona W para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
    }
    if(key =='w' || key=='W'){
     image(TeclaH,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(137,174,46);
     text("HP "+" 75/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -948,15 +991,16 @@ void draw(){
     text("Presiona O para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='o' || key=='O'){
     image(TeclaH,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -964,15 +1008,16 @@ void draw(){
     text("Presiona E para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
    }
    if(key =='e' || key=='E'){
     image(TeclaH,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(252,234,16);
     text("HP "+" 50/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -980,15 +1025,16 @@ void draw(){
     text("Presiona I para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido1.trigger();
    }
    if(key =='i' || key=='I'){
     image(TeclaH,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100",700,440);
     fill(0);
     textAlign(CENTER);
@@ -996,12 +1042,13 @@ void draw(){
     text("Presiona R para hacer daño", 450, 30);
     textSize(70);
     fill(47,198,40);
+    sonido3.trigger();
    }
    if(key =='r' || key=='R'){
     image(Ganador6,0,0);
     fill(58,170,53);
     textSize(20);
-    fill(47,198,40);
+    fill(243,146,0);
     text("HP "+" 25/100", 200, 440);
     textSize(20);
     fill(255,0,0);
